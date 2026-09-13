@@ -1,5 +1,6 @@
 #!/bin/bash
 # Читает и проверяет переменные окружения контейнера.
+# APP_PATH — корень смонтированного репозитория внутри контейнера (./:${APP_PATH}).
 # Без APP_PATH и APP_HOST Nginx не узнает, куда класть сайт и какой домен слушать.
 
 require() {
@@ -43,4 +44,5 @@ case $BUILD_BITRIX_VERSION in
 esac
 
 log info "Сайт: $APP_PATH  ·  домен: $APP_HOST  ·  редакция: $BUILD_BITRIX_VERSION"
+mkdir -p "$APP_PATH"
 cd "$APP_PATH"
