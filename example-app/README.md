@@ -130,6 +130,18 @@ pre-commit:
       run: make phpcs && git add {staged_files}
 ```
 
+## Пробный период (бесконечный)
+
+### №1
+
+1. [Поместите файл trial.php в корень проекта](attachments/trial/trial.php)
+2. Запустите его: `http://ваш_домен/trial.php`
+3. Бесконечный пробный период установлен (удалите файл trial.php)
+
+### №2
+
+1. [Следуйте инструкции со скриншота trial.png](attachments/trial/trial.png)
+
 ## Команды
 
 ### Загрузить БД в контейнер (mariadb)
