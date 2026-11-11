@@ -87,7 +87,8 @@ RUN docker-php-ext-configure intl; \
     sockets \
     xml \
     xsl \
-    zip
+    zip \
+    ffi
 
 RUN pecl install imagick; \
     docker-php-ext-enable imagick
