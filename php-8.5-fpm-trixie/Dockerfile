@@ -34,6 +34,7 @@ RUN set -eux; \
     libpng-dev \
     libpq-dev \
     librsvg2-bin \
+    libvips42t64 \
     libwebp-dev \
     libxml2-dev \
     libxpm-dev \
