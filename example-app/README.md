@@ -156,6 +156,18 @@ docker exec -i $(basename $(pwd))-database-1 sh -c 'mariadb -u root --password="
 docker exec $(basename $(pwd))-database-1 sh -c 'exec mariadb-dump --all-databases -uroot -p"$MARIADB_ROOT_PASSWORD"' > ./docker/database/db.sql
 ```
 
+- Выгрузить БД без пользователей
+  - Задать название БД при импорте: `sed 's/sitemanager/delobalance/g'`
+
+```bash
+docker compose exec -T database mariadb-dump \
+  -ulogin -ppass \
+  --single-transaction --routines --triggers --events \
+  --databases sitemanager \
+| sed 's/sitemanager/delobalance/g' \
+> docker/mariadb/db.sql
+```
+
 ### Загрузить БД в контейнер (mysql)
 
 ```bash
